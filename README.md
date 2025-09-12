@@ -1,5 +1,3 @@
-# thuyettrinhtoan
-thuyet trinh toan
 <!DOCTYPE html>
 <html lang="vi">
 <head>
