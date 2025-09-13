@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <title>Thuyết Trình Toán 10 - Định Lý Sin</title>
   <style>
-    /* ... (giữ nguyên phần CSS như của bạn) ... */
     * { box-sizing: border-box; }
     body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #fff; background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); overflow-x: hidden; animation: bgFlow 20s infinite alternate; position: relative; }
     @keyframes bgFlow { 0% { background-position: left top; } 100% { background-position: right bottom; } }
@@ -12,9 +11,13 @@
     .slide.dimmed { opacity: 0.4; filter: brightness(0.7); }
     @keyframes fadeIn { 0% { opacity: 0; transform: translateY(30px); } 100% { opacity: 1; transform: translateY(0); } }
     h1, h2 { text-align: center; color: #ffda79; }
+    h1 { font-size: 2.5rem; margin-bottom: 10px;}
+    h2 { font-size: 2rem; margin: 30px 0 10px 0; }
+    hr { border: none; border-top: 2px solid #fff3; margin: 30px 0; }
     .team, .contact { text-align: center; font-style: italic; margin-bottom: 20px; color: #cceaff; z-index: 10; position: relative; }
     .section { margin-top: 30px; animation: fadeIn 2s; }
     .box { background-color: rgba(255, 255, 255, 0.1); padding: 20px; border-left: 5px solid #ffda79; border-radius: 10px; margin: 15px 0; color: #e0f7ff; }
+    .formula { font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace; font-size: 1.1rem; background: none; color: #fff6a9; margin: 8px 0 12px 0; display: block; }
     .mini-game { background-color: rgba(255, 255, 153, 0.2); border-left: 5px solid #ffcc00; }
     .exercise { background-color: rgba(173, 216, 230, 0.2); border-left: 5px solid #33d9b2; }
     button { background-color: #ffb142; color: black; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; margin-top: 10px; transition: 0.3s; }
@@ -33,16 +36,20 @@
     <h1>Thuyết Trình Toán 10</h1>
     <h2>Định Lý Sin</h2>
 
+    <hr>
+
     <div class="team">
-      Thành viên: Nguyễn Lâm, Phạm Cao Phong, Tuấn, Tuấn Khang , Quang Hải <br />
+      Thành viên: Nguyễn Lâm, Phạm Cao Phong, Tuấn, Tuấn Khang, Quang Hải <br />
       Lớp: 10XH2
     </div>
+
+    <hr>
 
     <div class="section">
       <h2>1. Định Lý Sin</h2>
       <div class="box">
         Trong tam giác ABC bất kỳ:
-        <pre>a / sin A = b / sin B = c / sin C</pre>
+        <span class="formula">a / sin A = b / sin B = c / sin C</span>
         ➤ Dùng để tính cạnh hoặc góc khi biết 2 góc và 1 cạnh, hoặc 2 cạnh và 1 góc đối diện.
       </div>
       <div class="box" style="background-color: rgba(255, 230, 230, 0.12); border-left: 5px solid #fd79a8; margin-top: 10px;">
@@ -65,12 +72,11 @@
         Cho tam giác ABC, a = 7cm, A = 30°, b = 9cm, B = 45°. Tính góc C.<br><br>
         <strong>Lời giải:</strong><br>
         Áp dụng định lý Sin:<br>
-        <pre>a/sinA = b/sinB ⇒ 7/sin(30°) = 9/sin(45°)</pre>
-        Giải ra ta được:<br>
+        <span class="formula">a / sinA = b / sinB ⇒ 7 / sin(30°) = 9 / sin(45°)</span>
         sin(30°) = 0.5, sin(45°) ≈ 0.707<br>
         7 / 0.5 = 9 / 0.707<br>
         14 = 12.73 (gần đúng)<br>
-        (Sử dụng tính chất tổng các góc tam giác = 180° để tìm góc C)
+        (Có thể dùng tổng các góc tam giác = 180° để tìm tiếp góc C)
       </div>
     </div>
 
@@ -83,7 +89,6 @@
         <button onclick="checkAnswer1()">Kiểm tra</button>
         <p id="result1"></p>
       </div>
-
       <div class="box mini-game" style="margin-top: 20px;">
         <strong>Câu hỏi 2:</strong><br />
         Cho tam giác ABC có a = 5, b = 7, c = 8. Tính góc C (độ).<br />
@@ -118,7 +123,7 @@
           <tbody>
             <tr>
               <td>Định Lý Sin</td>
-              <td>a / sin A = b / sin B = c / sin C</td>
+              <td><span class="formula">a / sin A = b / sin B = c / sin C</span></td>
               <td>Tính cạnh hoặc góc trong tam giác bất kỳ</td>
             </tr>
           </tbody>
@@ -177,7 +182,6 @@
       const width = window.innerWidth;
       const mouseX = e.clientX;
 
-      // Nếu chuột nằm trong 30% giữa màn hình thì sáng, ngoài ra mờ đi
       if (mouseX > width * 0.35 && mouseX < width * 0.65) {
         slide.classList.remove('dimmed');
       } else {
@@ -185,13 +189,11 @@
       }
     });
 
-    // Khi chuột rời khỏi body thì cũng mờ slide
     document.body.addEventListener('mouseleave', () => {
       const slide = document.querySelector('.slide');
       slide.classList.add('dimmed');
     });
 
-    // Khi chuột vào body thì sáng slide
     document.body.addEventListener('mouseenter', () => {
       const slide = document.querySelector('.slide');
       slide.classList.remove('dimmed');
@@ -203,29 +205,17 @@
     function createSnowflake() {
       const snowflake = document.createElement('div');
       snowflake.classList.add('snowflake');
-
-      // Kích thước ngẫu nhiên
       const size = Math.random() * 7 + 3 + 'px';
       snowflake.style.width = size;
       snowflake.style.height = size;
-
-      // Vị trí ngang ban đầu
       snowflake.style.left = Math.random() * window.innerWidth + 'px';
-
-      // Thời gian rơi ngẫu nhiên từ 7 đến 15 giây
       const duration = Math.random() * 8 + 7;
       snowflake.style.animationDuration = duration + 's';
-
-      // Độ mờ ngẫu nhiên
       snowflake.style.opacity = Math.random() * 0.5 + 0.3;
-
       document.body.appendChild(snowflake);
-
-      // Khi kết thúc animation, snowflake sẽ được reset để rơi lại
       snowflake.addEventListener('animationiteration', () => {
         snowflake.style.left = Math.random() * window.innerWidth + 'px';
       });
-
       return snowflake;
     }
 
