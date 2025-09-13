@@ -112,22 +112,23 @@
     <div class="section">
       <h2>5. Bảng Những Điều Cần Nhớ</h2>
       <div class="box">
-        <table>
-          <thead>
-            <tr>
-              <th>Định Lý</th>
-              <th>Công Thức</th>
-              <th>Ứng Dụng</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Định Lý Sin</td>
-              <td><span class="formula">a / sin A = b / sin B = c / sin C</span></td>
-              <td>Tính cạnh hoặc góc trong tam giác bất kỳ</td>
-            </tr>
-          </tbody>
-        </table>
+       <table>
+  <thead>
+    <tr>
+      <th>Định Lý</th>
+      <th>Công Thức</th>
+      <th>Ứng Dụng</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Định Lý Sin</td>
+      <td><b style="color:#f39c12;">a / sin A = b / sin B = c / sin C</b></td>
+      <td>Tính cạnh hoặc góc trong tam giác bất kỳ</td>
+    </tr>
+  </tbody>
+</table>
+
       </div>
     </div>
 
